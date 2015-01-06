@@ -124,6 +124,7 @@ public class GrammarWindowMenu implements XJMenuItemDelegate {
     public static final int MI_EXPORT_ALL_AS_EPS = 113;
     public static final int MI_EXPORT_AS_DOT = 114;
     public static final int MI_EXPORT_EVENT = 115;
+    public static final int MI_EXPORT_AS_XML = 116;
 
     public static final int MI_PRIVATE_UNREGISTER = 200;
     public static final int MI_SERIALIZE_SD = 201;
@@ -188,6 +189,7 @@ public class GrammarWindowMenu implements XJMenuItemDelegate {
         exportMenu.addItem(new XJMenuItem(resourceBundle.getString("menu.item.exportAsEPS"), MI_EXPORT_AS_EPS, this));
         exportMenu.addItem(new XJMenuItem(resourceBundle.getString("menu.item.exportAsBitmap"), MI_EXPORT_AS_IMAGE, this));
         exportMenu.addItem(new XJMenuItem(resourceBundle.getString("menu.item.exportAsDot"), MI_EXPORT_AS_DOT, this));
+        exportMenu.addItem(new XJMenuItem(resourceBundle.getString("menu.item.exportAsXML"), MI_EXPORT_AS_XML, this));
 
         menu.insertItemAfter(exportMenu, XJMainMenuBar.MI_SAVEAS);
 
@@ -432,6 +434,10 @@ public class GrammarWindowMenu implements XJMenuItemDelegate {
                 item = new XJMenuItem(contextual? resourceBundle.getString("contextual.item.exportAsEPS") : resourceBundle.getString("menu.item.exportAsEPS"), MI_EXPORT_AS_EPS, this);
                 break;
 
+            case MI_EXPORT_AS_XML:
+                item = new XJMenuItem(contextual? resourceBundle.getString("contextual.item.exportAsXML") : resourceBundle.getString("menu.item.exportAsXML"), MI_EXPORT_AS_XML, this);
+                break;
+                
             case MI_EXPORT_AS_DOT:
                 item = new XJMenuItem(contextual? resourceBundle.getString("contextual.item.exportAsDot") : resourceBundle.getString("menu.item.exportAsDot"), MI_EXPORT_AS_DOT, this);
                 break;
@@ -814,7 +820,11 @@ public class GrammarWindowMenu implements XJMenuItemDelegate {
             case MI_EXPORT_AS_EPS:
                 actionExport.exportAsEPS();
                 break;
-
+            
+            case MI_EXPORT_AS_XML:
+                actionExport.exportAsXML();
+                break;
+                
             case MI_EXPORT_AS_DOT:
                 actionExport.exportAsDOT();
                 break;

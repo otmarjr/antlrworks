@@ -665,6 +665,11 @@ public class DebuggerTab extends GrammarWindowTab implements DetachablePanelDele
     }
 
     @Override
+    public boolean canExportToXML() {
+        return getExportableGView() != null;
+    }
+    
+    @Override
     public GView getExportableGView() {
         Component c = KeyboardFocusManager.getCurrentKeyboardFocusManager().getPermanentFocusOwner();
         if(Utils.isComponentChildOf(c, parseTreePanel))
@@ -687,6 +692,7 @@ public class DebuggerTab extends GrammarWindowTab implements DetachablePanelDele
         ContextualMenuFactory factory = delegate.createContextualMenuFactory();
         factory.addItem(GrammarWindowMenu.MI_EXPORT_AS_EPS);
         factory.addItem(GrammarWindowMenu.MI_EXPORT_AS_IMAGE);
+        factory.addItem(GrammarWindowMenu.MI_EXPORT_AS_XML);
         return factory.menu;
     }
 

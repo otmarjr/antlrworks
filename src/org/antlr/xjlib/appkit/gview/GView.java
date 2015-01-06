@@ -343,6 +343,10 @@ public class GView extends XJView implements XJMenuItemDelegate, GTimerDelegate,
         rootElement.drawRecursive(g2d);
         return g2d.getPSText();
     }
+    
+    public String getXML() {
+        return "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><ast></ast>";
+    }
 
     // Does not work currently - don't know why...
     public Image makeColorTransparent(Image im, final Color color) {

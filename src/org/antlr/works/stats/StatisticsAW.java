@@ -49,7 +49,8 @@ public class StatisticsAW {
     public static final int EVENT_EXPORT_AS_EPS = 1;
     public static final int EVENT_EXPORT_AS_DOT = 2;
     public static final int EVENT_EXPORT_EVENTS_AS_TEXT = 3;
-
+    public static final int EVENT_EXPORT_AS_XML = 4;
+    
     /* Menu Find */
     public static final int EVENT_FIND_DIALOG = 10;
     public static final int EVENT_FIND_NEXT = 11;

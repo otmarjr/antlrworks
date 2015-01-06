@@ -46,6 +46,7 @@ public abstract class GrammarWindowTab {
     public boolean canExportToEPS() { return false; }
     public boolean canExportToBitmap() { return false; }
     public boolean canExportToDOT() { return false; }
+    public boolean canExportToXML() { return false; }
     public String getDOTString() throws Exception { return null; }
     public GView getExportableGView() { return null; }
     public abstract String getTabName();
